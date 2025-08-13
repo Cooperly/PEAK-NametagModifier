@@ -4,10 +4,6 @@
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
-    <PropertyGroup>
-        <GamePath>/home/void/.local/share/Steam/steamapps/common/PEAK/</GamePath>
-        <ProfilePath>/home/void/.config/r2modmanPlus-local/PEAK/profiles/Default/</ProfilePath>
-    </PropertyGroup>
     <ItemGroup>
         <Reference Include="$(GamePath)/PEAK_Data/Managed/com.rlabrecque.steamworks.net.dll" />
         <Reference Include="$(GamePath)/PEAK_Data/Managed/Assembly-CSharp.dll"/>
@@ -15,21 +11,20 @@
         <Reference Include="$(GamePath)/PEAK_Data/Managed/Unity.*.dll"/>
         <Reference Include="$(GamePath)/PEAK_Data/Managed/UnityEngine.*.dll"/>
         <Reference Include="$(GamePath)/PEAK_Data/Managed/UnityEngine.dll"/>
+        <Reference Include="$(GamePath)/PEAK_Data/Managed/Zorro.Core.Runtime.dll"/>
+        <Reference Include="$(GamePath)/PEAK_Data/Managed/Zorro.Settings.Runtime.dll"/>
         <Reference Include="$(ProfilePath)/BepInEx/core/0Harmony.dll"/>
         <Reference Include="$(ProfilePath)/BepInEx/core/BepInEx.dll"/>
         <Reference Include="$(ProfilePath)/BepInEx/core/BepInEx.Harmony.dll"/>
+        <Reference Include="$(ProfilePath)/BepInEx/plugins/pharmacomaniac-SettingsExtenderForked/pharmacomaniac-SettingsExtenderForked/SettingsExtender.dll"/>
+        
         <PackageReference Include="Krafs.Publicizer" Version="2.3.0"/>
-        <Reference Include="Zorro.Core.Runtime">
-            <HintPath>..\..\..\.local\share\Steam\steamapps\common\PEAK\PEAK_Data\Managed\Zorro.Core.Runtime.dll</HintPath>
-        </Reference>
-        <Reference Include="Zorro.Settings.Runtime">
-            <HintPath>..\..\..\.local\share\Steam\steamapps\common\PEAK\PEAK_Data\Managed\Zorro.Settings.Runtime.dll</HintPath>
-        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Publicize Include="Assembly-CSharp"/>
     </ItemGroup>
     <ItemGroup>
-        <Reference Include="$(ProfilePath)/BepInEx/plugins/pharmacomaniac-SettingsExtenderForked/pharmacomaniac-SettingsExtenderForked/SettingsExtender.dll"/>
+        <None Include="NametagModifier.csproj.user" />
+        <None Remove="NametagModifier.csproj.user.example" />
     </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current">
+    <PropertyGroup>
+        <!-- Update your PEAK game directory and mod manager's profile here. -->
+        <GamePath>SOMEWHERE TO "steamapps/common/PEAK"</GamePath>
+        <ProfilePath>LOCATION TO MOD MANAGER PROFILE (or same as game path if you don't use a mod manager).</ProfilePath>
+    </PropertyGroup>
+
+    <Target Name="CopyToDevelopmentProfile" AfterTargets="PostBuildEvent" Condition="true">
+        <MakeDir Directories="$(ProfilePath)/BepInEx/plugins/$(AssemblyName)" Condition="Exists('$(ProfilePath)') And !Exists('$(ProfilePath)/BepInEx/plugins/$(AssemblyName)')" />
+        <!-- Windows with 'copy' -->
+        <Exec Command="copy '$(TargetPath)' '$(ProfilePath)/BepInEx/plugins/$(AssemblyName)/'" Condition="'$(OS)' == 'Windows_NT'" />
+        <!-- Linux/OSX with 'cp' -->
+        <Exec Command="cp '$(TargetPath)' '$(ProfilePath)/BepInEx/plugins/$(AssemblyName)/'" Condition="'$(OS)' != 'Windows_NT'" />
+    </Target>
+</Project>

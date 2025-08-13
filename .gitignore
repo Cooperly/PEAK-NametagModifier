@@ -56,3 +56,4 @@ nunit-*.xml
 # User specific items
 .idea
 *.DotSettings.user
+*.csproj.user
