@@ -9,7 +9,7 @@ public class ModifyNametag {
         var distance = SettingsHandler.Instance.GetSetting<VisibleDistance>().Value;
         var visibleAngle = SettingsHandler.Instance.GetSetting<VisibleAngle>().Value;
 
-        var clock = OverrideClock.Clock();
+        var clock = NametagModifier.IsOverriding();
         
         if (clock)
         {

@@ -1,6 +1,6 @@
 {
     "name": "NametagModifier",
-    "version_number": "1.0.1",
+    "version_number": "1.0.2",
     "description": "Allows for the modification of nametag visibility distances and angles, and creates an override keybind that shows all nametags regardless of distance for a short amount of time to help locate players.",
     "website_url": "https://github.com/Cooperly/PEAK-NametagModifier",
     "dependencies": [
