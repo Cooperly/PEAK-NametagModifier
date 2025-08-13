@@ -8,10 +8,12 @@ public static class OverrideClock {
     public static bool Clock() {
         var overrideTime = SettingsHandler.Instance.GetSetting<OverrideTime>().Value;
         
+        // Reset Override Behavior if player presses OverrideKey while already overridden
         if (Input.GetKeyDown(NametagModifier.OverrideKey.Value) && Time.realtimeSinceStartupAsDouble - LastTimeSetToTrue < overrideTime) {
             LastTimeSetToTrue = float.MinValue;
-            return true;
+            return false;
         }
+        // Compare Time.realtimeSinceStartupAsDouble to LastTimeSetToTrue, return true if less than overrideTime
         if (Time.realtimeSinceStartupAsDouble - LastTimeSetToTrue < overrideTime){
             return true;
         }
@@ -22,6 +24,5 @@ public static class OverrideClock {
         }
         return false;
     }
-    
     public static float LastTimeSetToTrue = float.MinValue;
 }
