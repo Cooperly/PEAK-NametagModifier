@@ -18,7 +18,7 @@ public class VisibleAngle : FloatSetting, IExposedSetting {
     }
 
     protected override float2 GetMinMaxValue() {
-        return new float2(0f, 180f);
+        return new float2(0f, 160f);
     }
 
     public override void ApplyValue() {

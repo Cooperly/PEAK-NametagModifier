@@ -14,7 +14,7 @@ public class ModifyNametag {
         if (clock)
         {
             __instance.visibleDistance = 4000;
-            __instance.visibleAngle = 180;
+            __instance.visibleAngle = 80;
             return;
         }
         __instance.visibleDistance = distance;
